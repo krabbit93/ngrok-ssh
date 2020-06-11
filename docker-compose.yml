@@ -1,0 +1,11 @@
+version: '2.0'
+services:
+    ngrok:
+        build:
+            context: .
+            args:
+                - PASSWORD=
+                - AUTHTOKEN=
+        ports:
+        - '4040:4040'
+        - '2222:22'
