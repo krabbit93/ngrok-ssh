@@ -1,4 +1,4 @@
-version: '2.0'
+version: '3.4'
 services:
     ngrok:
         build:
@@ -6,6 +6,12 @@ services:
             args:
                 - PASSWORD=
                 - AUTHTOKEN=
+            network: 'host'
         ports:
         - '4040:4040'
         - '2222:22'
+        - '2323:2323'
+        - '7001:7001'
+        volumes:
+        - "./dbin/:/dbin/"
+        container_name: 'ngrok'
